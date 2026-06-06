@@ -12,6 +12,7 @@ Python scripts for building and enriching LibreOffice Calc (`.ods`) stock analys
 | `add_formulas.py` | Replaces pre-computed values with native Calc formulas |
 | `fix_forecast.py` | Fixes the FORECAST.ETS formula in the Forecast sheet |
 | `add_forecast_chart.py` | Adds a Close vs Forecast line chart to the Forecast sheet |
+| `add_jepi_all_chart.py` | Adds an all-indicators line chart to the JEPI sheet |
 | `Ford.ods` | Ford stock analysis workbook |
 | `income_stocks.ods` | Income/dividend ETF analysis workbook |
 | `ecommerce_sales.ods` | E-commerce sales workbook |
@@ -32,7 +33,13 @@ Python scripts for building and enriching LibreOffice Calc (`.ods`) stock analys
 | G | VWAP + 2σ |
 | H | VWAP − 2σ |
 
-Two embedded charts: Close + MA_50 + MA_100 line chart, and VWAP ± 2σ band chart.
+Three embedded charts:
+
+| Chart | Series |
+|-------|--------|
+| Object 1 — MA chart | Close (blue), MA_50 (red), MA_100 (amber) |
+| Object 2 — VWAP chart | Close (blue), VWAP (green), VWAP+2σ (purple), VWAP-2σ (purple) |
+| Object 4 — All indicators | Close, MA_50, MA_100, VWAP, VWAP+2σ (dashed), VWAP-2σ (dashed) |
 
 ### Forecast sheet
 
@@ -70,6 +77,9 @@ python3 fix_forecast.py
 
 # 5. Add Close vs Forecast line chart to Forecast sheet
 python3 add_forecast_chart.py
+
+# 6. Add all-indicators chart to JEPI sheet
+python3 add_jepi_all_chart.py
 ```
 
 Each script reads and overwrites `JEPI-ETF.ods` in place, using a temp directory under `/tmp/` during processing.
