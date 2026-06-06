@@ -58,12 +58,13 @@ Built from `jepi_us_d.csv` using Python stdlib only (no pandas).
 | C | Close |
 | D | Volume |
 | E | MA5 (5-day moving average) |
-| F | MA100 (100-day moving average) |
-| G | VWAP (cumulative volume-weighted average price) |
-| H | VWAP + 2σ |
-| I | VWAP − 2σ |
+| F | MA50 (50-day moving average) |
+| G | MA100 (100-day moving average) |
+| H | VWAP (cumulative volume-weighted average price) |
+| I | VWAP + 2σ |
+| J | VWAP − 2σ |
 
-Embedded line chart (Object1) plots Close, MA5, MA100, VWAP, VWAP+2σ, and VWAP−2σ against Date.
+Embedded line chart (Object1) plots Close, MA5, MA50, MA100, VWAP, VWAP+2σ, and VWAP−2σ against Date.
 
 ---
 
