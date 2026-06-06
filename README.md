@@ -13,6 +13,8 @@ Python scripts for building and enriching LibreOffice Calc (`.ods`) stock analys
 | `fix_forecast.py` | Fixes the FORECAST.ETS formula in the Forecast sheet |
 | `add_forecast_chart.py` | Adds a Close vs Forecast line chart to the Forecast sheet |
 | `add_jepi_all_chart.py` | Adds an all-indicators line chart to the JEPI sheet |
+| `JEPI-Weekly.ods` | JEPI weekly analysis workbook with indicators and chart |
+| `jepi_us_d.csv` | Source daily JEPI price/volume data (Week_Start added) |
 | `Ford.ods` | Ford stock analysis workbook |
 | `income_stocks.ods` | Income/dividend ETF analysis workbook |
 | `ecommerce_sales.ods` | E-commerce sales workbook |
@@ -40,6 +42,30 @@ Three embedded charts:
 | Object 1 — MA chart | Close (blue), MA_50 (red), MA_100 (amber) |
 | Object 2 — VWAP chart | Close (blue), VWAP (green), VWAP+2σ (purple), VWAP-2σ (purple) |
 | Object 4 — All indicators | Close, MA_50, MA_100, VWAP, VWAP+2σ (dashed), VWAP-2σ (dashed) |
+
+---
+
+## Workbook Layout (JEPI-Weekly.ods)
+
+Built from `jepi_us_d.csv` using Python stdlib only (no pandas).
+
+### JEPI sheet
+
+| Column | Content |
+|--------|---------|
+| A | Week_Start (Monday of each trading week) |
+| B | Date |
+| C | Close |
+| D | Volume |
+| E | MA5 (5-day moving average) |
+| F | MA100 (100-day moving average) |
+| G | VWAP (cumulative volume-weighted average price) |
+| H | VWAP + 2σ |
+| I | VWAP − 2σ |
+
+Embedded line chart (Object1) plots Close, MA5, MA100, VWAP, VWAP+2σ, and VWAP−2σ against Date.
+
+---
 
 ### Forecast sheet
 
